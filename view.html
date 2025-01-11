@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width-device-width, initial=1.0">
+        <meta name="description" content="private investetments">
+        <meta name="keywords" content="private investetments, total assets">
+        <title>My Investments</title>
+        <!-- google fonts-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Alike+Angular&display=swap" rel="stylesheet">
+
+        <!-- stylesheet-->
+        <link href="styles/styles.css" rel="stylesheet">
+        <!-- font awesome cdn-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+         integrity="sha512-Avb2QiuDEEvB4bZJYdft2mNjVShBftLdPG8FJ0V7irTLQ8Uo0qcPxh4Plq7G5tGm0rU+1SPhVotteLpBERwTkw=="
+         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <script src="scripts/scripts.js" defer></script>
+        <script src="https://cdn.anychart.com/releases/8.11.0/js/anychart-base.min.js"></script>
+        <!-- <script> alert("This page has been reloaded")</script> -->
+    </head>
+
+    <body>
+        <!-- overlay for mobile-->
+        <div id="overlay">
+            <div>
+                <i class="fa fa-times" title="button to close mobile navigation" onclick="off()"></i>
+            </div>
+            <div class ="overlay-text">
+                <a href="index.html"> Dashboard </a>
+                <a href="stats.html"> Stats </a>
+                <a href="view.html"> View </a>
+                <a href="update.html"> Update </a>
+            </div>
+        </div>
+        <header>
+            <nav class="nav full-nav">
+                <div>
+                    <img src="images/logo.jpg" alt="main logo" style="width: 10%;">
+                </div>
+                <div>My Investments</div>
+                <ul>
+                    <li><a href="index.html"> Dashboard </a></li>
+                    <li><a href="stats.html"> Stats </a></li>
+                    <li><a href="view.html"> View </a></li>
+                    <li><a href="update.html"> Update </a></li>
+                </ul>
+            </nav>
+            </nav>
+
+            <!-- mobile-->
+            <nav class="nav mobile-nav">
+                <div>
+                    <img src="images/logo.jpg" alt="main logo" style="width: 10%;">
+                </div>
+                <div>
+                    <i class="fa-solid fa-bars" title="button to open navigation" onclick="on()"></i>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <input type="button" value="Polish Stocks" onclick="fetchStockPl();" />
+            <input type="button" value="International Stocks" onclick="fetchStockInt();" />
+            <input type="button" value="Cash in Currency" onclick="fetchCashCurrency();" />
+            <input type="button" value="Cash in PLN" onclick="fetchCashPLN();" />
+            <input type="button" value="Crypto" onclick="fetchCrypto();" />
+            <input type="button" value="Metals" onclick="fetchMetals();" />
+            <input type="button" value="Spendings" onclick="fetchSpendings();" />
+            <input type="button" value="Crypto Transactions" onclick="fetchCryptoHistpry();" />
+            <input type="button" value="Metals Transactions" onclick="fetchMetalsHistory();" /> 
+            
+                <table class="myTable1">
+                    <thead id ="header1"> </thead>
+                    <tbody id ="table1"></tbody>                
+                </table>
+           <script src="scripts/table1.js"> </script> 
+           
+
+          
+
+        </main>
+    </body>
+</html> 
