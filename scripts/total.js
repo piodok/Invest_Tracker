@@ -1,5 +1,5 @@
-//let ipaddress = '192.168.0.13';
-let ipaddress = '192.168.0.182';
+let ipaddress = '192.168.0.2';
+//let ipaddress = '192.168.0.182';
 
 const api1 = `http://${ipaddress}:8000/total`;
 fetch(api1)
