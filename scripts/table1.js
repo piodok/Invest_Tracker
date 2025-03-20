@@ -132,50 +132,91 @@ function getTH(header) {
 function getTD(data) {
   const table = document.getElementById("table1")
   let tags = "";
+  let sum_current = 0;
+  let sum_invested = 0;
   data.map(d => {
-    console.log(d[0])
+    console.log(d[4])
+    sum_current += d[5]
+    sum_invested += d[4]
     tags += '<tr> <td>' + d[0] + '</td> <td>' + d[1] + '</td> <td>' + d[2] + '</td> <td>' + d[3] + '</td> <td>' + d[4] + '</td> <td>' + d[5] + '</td> </tr>'
   })
+  //tags +=  '<td>' + sum_invested + '<td>' + sum_current + '<td>'
+  console.log(sum_invested, sum_current)
+  let percentage = (sum_current - sum_invested) / (sum_invested) * 100;
   table.innerHTML = tags;
+  document.getElementById('apiTotal').innerHTML = JSON.stringify(sum_current.toFixed(2))
+  document.getElementById('apiInvested').innerHTML = JSON.stringify(sum_invested.toFixed(2))
+  document.getElementById('percentage').innerHTML = JSON.stringify(percentage.toFixed(2))
 } 
 
 function getTDCashCurrency(data) {
   const table = document.getElementById("table1")
   let tags = "";
+  let sum_current = 0;
   data.map(d => {
-    console.log(d[0])
+    console.log(d[0])   
+    sum_current += d[4]
     tags += '<tr> <td>' + d[0] + '</td> <td>' + d[1] + '</td> <td>' + d[2] + '</td> <td>' + d[3] + '</td> <td>' + d[4] + '</td> <td>' + d[5] + '</td> <td>' + d[6] + '</td> <td>' + d[7] + '</td> </tr>'
   })
+  console.log(sum_current)
   table.innerHTML = tags;
+  document.getElementById('apiTotal').innerHTML = JSON.stringify(sum_current.toFixed(2))
+  document.getElementById('apiInvested').innerHTML = JSON.stringify()
+  document.getElementById('percentage').innerHTML = JSON.stringify()
 }
+
 function getTDCashPln(data) {
   const table = document.getElementById("table1")
   let tags = "";
+  let sum_current = 0;
   data.map(d => {
     console.log(d[0])
+    sum_current += d[1]
     tags += '<tr> <td>' + d[0] + '</td> <td>' + d[1] + '</td> <td>' + d[2] + '</td> <td>' + d[3] + '</td> <td>' + d[4] + '</td> </tr>'
   })
+  console.log(sum_current)
   table.innerHTML = tags;
+  document.getElementById('apiTotal').innerHTML = JSON.stringify(sum_current.toFixed(2))
+  document.getElementById('apiInvested').innerHTML = JSON.stringify()
+  document.getElementById('percentage').innerHTML = JSON.stringify()
 }
 
 function getTDMetals(data) {
   const table = document.getElementById("table1")
   let tags = "";
+  let sum_current = 0;
+  let sum_invested = 0;
   data.map(d => {
     console.log(d[0])
+    sum_current += d[5]
+    sum_invested += d[4]
     tags += '<tr> <td>' + d[0] + '</td> <td>' + d[1] + '</td> <td>' + d[2] + '</td> <td>' + d[3] + '</td> <td>' + d[4] + '</td> <td>' + d[5] + '</td> </tr>'
   })
+  console.log(sum_invested, sum_current)
+  let percentage = (sum_current - sum_invested) / (sum_invested) * 100;
   table.innerHTML = tags;
+  document.getElementById('apiTotal').innerHTML = JSON.stringify(sum_current.toFixed(2))
+  document.getElementById('apiInvested').innerHTML = JSON.stringify(sum_invested.toFixed(2))
+  document.getElementById('percentage').innerHTML = JSON.stringify(percentage.toFixed(2))
 }
 
 function getTDCrypto(data) {
   const table = document.getElementById("table1")
   let tags = "";
+  let sum_current = 0;
+  let sum_invested = 0;
   data.map(d => {
     console.log(d[0])
+    sum_current += d[5]
+    sum_invested += d[4]
     tags += '<tr> <td>' + d[0] + '</td> <td>' + d[1] + '</td> <td>' + d[2] + '</td> <td>' + d[3] + '</td> <td>' + d[4] + '</td> <td>' + d[5] + '</td> </tr>'
   })
+  console.log(sum_invested, sum_current)
+  let percentage = (sum_current - sum_invested) / (sum_invested) * 100;
   table.innerHTML = tags;
+  document.getElementById('apiTotal').innerHTML = JSON.stringify(sum_current.toFixed(2))
+  document.getElementById('apiInvested').innerHTML = JSON.stringify(sum_invested.toFixed(2))
+  document.getElementById('percentage').innerHTML = JSON.stringify(percentage.toFixed(2))
 }
 
 function getTDSpendings(data) {
